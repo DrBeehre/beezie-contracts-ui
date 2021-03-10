@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
-import DateTime from 'react-datetime';
+import { FunctionComponent, useState, useEffect } from "react";
+import { ContractTemplate } from './../Types/types'
 
-const ContractTemplateStore = () => {
-    const [contractTemplates, setContractTemplates] = useState([]);
+const ContractTemplateStore:FunctionComponent = () => {
+    const [contractTemplates, setContractTemplates] = useState<ContractTemplate[]>([]);
 
     useEffect(() => {
         const fetchDataAsync = async () => {
@@ -18,7 +18,12 @@ const ContractTemplateStore = () => {
         <>
             {contractTemplates && contractTemplates.map(contractTemplate => {
                 console.log(contractTemplate)
-                return contractTemplate.contract_name
+                return (
+                    <div>
+                        {contractTemplate.contract_name}
+                        {console.log(contractTemplate)}
+                    </div>
+                )
             })}
         </>
     );
