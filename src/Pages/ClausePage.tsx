@@ -56,21 +56,23 @@ function ClausePage(props: any) {
                 </div>
                 <Container className={classes.cardGrid} maxWidth="md">
                     <Grid container spacing={4}>
-                        {cards.map((card) => {
-                            <Card className={classes.card}>
-                                <CardHeader
-                                    title="Clause Title"
-                                    subheader="Unique Code"
-                                />
-                                <CardContent className={classes.cardContent}>
-                                    <Typography variant="body2" color="textSecondary" component="p">
-                                        Something short and leading about the collection below—its contents,
-                                        the creator, etc. Make it short and sweet, but not too short so folks
-                                        don&apos;t simply skip over it entirely.
-                                    </Typography>
-                                </CardContent>
-                            </Card>
-                        })}
+                        {cards.map((card) => (
+                            <Grid item xs={12} sm={12} md={12}>
+                                <Card className={classes.card}>
+                                    <CardHeader
+                                        title="Clause Title"
+                                        subheader="Unique Code"
+                                    />
+                                    <CardContent className={classes.cardContent}>
+                                        <Typography variant="body2" color="textSecondary" component="p">
+                                            Something short and leading about the collection below—its contents,
+                                            the creator, etc. Make it short and sweet, but not too short so folks
+                                            don&apos;t simply skip over it entirely.
+                                        </Typography>
+                                    </CardContent>
+                                </Card>
+                            </Grid>
+                        ))}
                     </Grid>
                 </Container>
             </main>
